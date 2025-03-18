@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="shortcut icon" href="/images/logo.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <script src="scripts/preload.js"></script>
 </head>
 
 <body>
+  <div class="preloader">
+    <img
+src="images/logo.png" alt="Preloader Image" class="preloader-image">
+</div>
     <script>
         fetch('/config.json', {
             method: 'GET',
@@ -59,7 +64,7 @@
             <text>Enter the accesskey into the "accesskey" input.</text><br><br>
             <h2>If You Have Any Problems Contact Staff In The Discord Server.</h2><br><br>
             <h1>Why is there a Access Key?</h1>
-            <text id="idk">It serves 2 purposes for Triangulet:</text><br>
+            <text id="idk">It serves 2 purposes for Whitet:</text><br>
             <text>1 - Semi alt protection, you should only be able to run the command once so you cant create multiple
                 accounts.</text><br><br>
             <text>2 - Age barrier, if you are indeed following Discords TOS, you need to be over 13 to get a

@@ -1,13 +1,14 @@
 const mysql = require('mysql2/promise');
-
+const path = require("path")
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 async function connect() {
   try {
     const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASS,
-      database: process.env.DB_DATABASE,
-      charset: process.env.DB_CHARSET,
+      host: process.env.dbHost,
+      user: process.env.dbUser,
+      password: process.env.dbPass,
+      database: process.env.dbDb,
+      charset: process.env.dbCharSet,
     });
     return connection;
   } catch (err) {

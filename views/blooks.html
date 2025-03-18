@@ -6,15 +6,22 @@
     " type="text/javascript"></script>
   <script src="/js/all.js"></script>
   <script src="/scripts/themes.js"></script>
-  <script defer src="/js/trians.js"></script>
-  <link rel="stylesheet" href="/fontawesome6.3.0.css" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/50c608c656.js" crossorigin="anonymous"></script>
+  <script defer src="/js/stats.js"></script>
+  <script defer src="scripts/blook.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-  <link rel="stylesheet" href="main.css">
-  <title>Trians | Whitet</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Blooks | Whitet</title>
   <link rel="shortcut icon" href="/images/logo.png">
+  <script src="scripts/themes.js" defer></script>
+  <script src="scripts/preload.js"></script>
 </head>
 
 <body>
+  <div class="preloader">
+    <img
+src="images/logo.png" alt="Preloader Image" class="preloader-image">
+</div>
   <div class="styles__background___2J-JA-camelCase">
     <div class="styles__blooksBackground___3oQ7Y-camelCase" style="background-image: url('/images/ui7.png');  animation: animatedBackground 9s linear infinite;
     -moz-animation: animatedBackground 9s linear infinite;
@@ -27,7 +34,7 @@
       <div class="styles__profileRow___cJa4E-camelCase">
         <div style="position: relative"
           class="styles__blookContainer___36LK2-camelCase styles__profileBlook___37mfP-camelCase">
-          <img src="" id='pfpimg' draggable="false" class="styles__blook___1RXSo-camelCase">
+          <img src="imges/logo.png" id='pfpimg' draggable="false" class="styles__blook___1RXSo-camelCase">
         </div><text class="" style="color: #ffffff" id="usernamedrop">user</text>
       </div><i class="fas fa-angle-down styles__profileDropdownIcon___3iLIX-camelCase" aria-hidden="true"></i>
       <div class="styles__profileDropdownMenu___2jUAA-camelCase">
@@ -39,71 +46,183 @@
   </div>
   <div class="styles__sidebar___1XqWi-camelCase">
     <a href="/" class="styles__blooketText___1pMBG-camelCase">Whitet</a>
+    <a class="styles__pageButton___1wFuu-camelCase" href="/stats"><i
+      class="styles__pageIcon___3OSy9-camelCase fas fa-chart-column" aria-hidden="true"></i>
+    <div class="styles__pageText___1eo7q-camelCase">Stats</div>
+  </a>
     <div class="nothin"><a class="styles__pageButton___1wFuu-camelCase" href="/market"><i
           class="styles__pageIcon___3OSy9-camelCase fas fa-store" aria-hidden="true"></i>
         <div class="styles__pageText___1eo7q-camelCase">Market</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase" href="/trians"><i
+      </a><a class="styles__pageButton___1wFuu-camelCase" href="/blooks"><i
           class="styles__pageIcon___3OSy9-camelCase fas fa-suitcase" aria-hidden="true"></i>
-        <div class="styles__pageText___1eo7q-camelCase">Trians</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase" href="/posts"><i
-          class="styles__pageIcon___3OSy9-camelCase fas fa-file" aria-hidden="true"></i>
-        <div class="styles__pageText___1eo7q-camelCase">Posts</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase"><i class="styles__pageIcon___3OSy9-camelCase fas fa-newspaper"
+        <div class="styles__pageText___1eo7q-camelCase">Blooks</div>
+      </a><a class="styles__pageButton___1wFuu-camelCase"><i class="styles__pageIcon___3OSy9-camelCase fas fa-comment"
           aria-hidden="true"></i>
-        <div class="styles__pageText___1eo7q-camelCase">News</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase" href="/auction"><i
+        <div class="styles__pageText___1eo7q-camelCase">Chat</div>
+      </a><a class="styles__pageButton___1wFuu-camelCase" href="/chat"><i
           class="styles__pageIcon___3OSy9-camelCase fas fa-building-columns" aria-hidden="true"></i>
         <div class="styles__pageText___1eo7q-camelCase">Auction</div>
       </a></div>
+      
+      <a class="styles__plusButton___2dH73-camelCase" href="/store"></i>Toggle Dark Mode</a>
     <div class="styles__bottomRow___3OozA-camelCase">
       <a data-tip="Credits" class="styles__smallButton___sQuq8-camelCase" href="/credits" currentitem="false"><i
-          class="styles__bottomIcon___3Fswk-camelCase fas fa-address-book" aria-hidden="true"></i></a>
-      <a data-tip="Settings" class="styles__smallButton___sQuq8-camelCase" href="/settings" currentitem="false"><i
-          class="styles__bottomIcon___3Fswk-camelCase fas fa-cogs" aria-hidden="true"></i></a>
-      <a data-tip="Stats" class="styles__smallButton___sQuq8-camelCase" href="/stats" currentitem="false"><i
-          class="styles__bottomIcon___3Fswk-camelCase fas fa-user" aria-hidden="true"></i></a>
+          class="styles__bottomIcon___3Fswk-camelCase fas fa-users" aria-hidden="true"></i></a>
+      <a data-tip="Settings" class="styles__smallButton___sQuq8-camelCase" href="/settings" currentitem= " false"><i
+          class="styles__bottomIcon___3Fswk-camelCase fas fa-cog" aria-hidden="true"></i></a>
+      <a data-tip="Stats" class="styles__smallButton___sQuq8-camelCase" href="/news" currentitem="false"><i
+          class="styles__bottomIcon___3Fswk-camelCase fas fa-newspaper" aria-hidden="true"></i></a>
+          <a data-tip="Stats" class="styles__smallButton___sQuq8-camelCase" href="/news" currentitem="false"><i
+            class="styles__bottomIcon___3Fswk-camelCase fa-brands fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
   <div class="arts__profileBody___eNPbH-camelCase">
     <div class="styles__left___9beun-camelCase triansthing">
       <div class="styles__blooksHolder___3qZR1-camelCase" id="trianscontainer">
+        <div class="styles__setHolder___rVq3Z-camelCase">
+          <div class="styles__setTop___wIaVS-camelCase">
+            <div class="styles__setTopBackground___342Wr-camelCase" style="background-image: url('images/blookTile.webp');"></div>
+            <div class="styles__setText___1PQLQ-camelCase">Soda Pack</div>
+            <div class="styles__setDivider___3da0c-camelCase"></div>
+          </div>
+          <div id="sodaPack" class="styles__setBlooks___3xamH-camelCase">
+            <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/pesip2.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #4bc22e; color: white;">1</div>
+           </div>
+           <div id="cok" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+            <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/cok_soda.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+            <div class="styles__blookText___3AMdK-camelCase" style="background-color: #4bc22e; color: white;">1</div>
+           </div>
+          <div id="spit" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/spit.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #4bc22e; color: white;">1</div>
+           </div>
+           <div id="cursh" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+            <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/cursh2.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+            <div class="styles__blookText___3AMdK-camelCase" style="background-color: #4bc22e; color: white;">1</div>
+           </div>
+           <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+            <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/drpeeper.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+            <div class="styles__blookText___3AMdK-camelCase" style="background-color: #0a14fa; color: white;">1</div>
+           </div>
+           <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+            <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/africamoist.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+            <div class="styles__blookText___3AMdK-camelCase" style="background-color: #0a14fa; color: white;">1</div>
+           </div>
+           <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+            <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/bluecow.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+            <div class="styles__blookText___3AMdK-camelCase" style="background-color: #be0000; color: white;">1</div>
+           </div>
+           <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+            <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/mtnview.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+            <div class="styles__blookText___3AMdK-camelCase" style="background-color: #be0000; color: white;">1</div>
+           </div>
+           <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+            <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/rootbeer.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+            <div class="styles__blookText___3AMdK-camelCase" style="background-color: #ff910f; color: white;">1</div>
+           </div>
+           <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+            <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Soda/fatna3.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+            <div class="styles__blookText___3AMdK-camelCase" style="background-color: #00ccff; color: white;">1</div>
+           </div>
+          </div>
+          <div class="styles__setHolder___rVq3Z-camelCase">
+            <div class="styles__setTop___wIaVS-camelCase">
+              <div class="styles__setTopBackground___342Wr-camelCase" style="background-image: url('images/blookTile.webp');"></div>
+              <div class="styles__setText___1PQLQ-camelCase">Dorizo Pack</div>
+              <div class="styles__setDivider___3da0c-camelCase"></div>
+            </div>
+            <div id="sodaPack" class="styles__setBlooks___3xamH-camelCase">
+              <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+                <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/Triangle.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+                <div class="styles__blookText___3AMdK-camelCase" style="background-color: #4bc22e; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/ogdorito.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #4bc22e; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+                <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/d5.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+                <div class="styles__blookText___3AMdK-camelCase" style="background-color: #4bc22e; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/idk.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #0a14fa; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/d9.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #0a14fa; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/dx.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #0a14fa; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/bottlecapdorito.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #be0000; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/d4.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #ff910f; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/silverdorito.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #00ccff; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/evildorito.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #00ccff; color: white;">1</div>
+             </div>
+            <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/3DORITO.png" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background-color: #8713d4; color: white;">1</div>
+             </div>
+             <div id="idk" class="styles__blookContainer___3JrKb-camelCase" style="cursor: pointer" role="button" tabindex="0">
+              <div class="styles__blookContainer___36LK2-camelCase styles__blook___bNr_t-camelCase "><img  src="images/Dorizo/metaldorizo.webp" draggable="false" class="styles__blook___1R6So-camelCase"></div>
+              <div class="styles__blookText___3AMdK-camelCase" style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); color: white;">1</div>
+             </div>
+          </div>
+        </div>
+        </div>
 
       </div>
     </div>
     <div class="styles__right___385mx-camelCase">
-      <img id="trianbackground" alt="trianbackground" class="trianBackGround" src="backgrouhnd.svg">
+      <img id="blookBg" alt="trianbackground" class="trianBackGround" src="images/paper.webp">
       <div class="styles__rightTopText___2VrKK-camelCase">
         <div class="styles__highlightedName___2wOtf-camelCase" style="font-size: 40px;">
-          <div id="trianname" style="display: block; white-space: nowrap;font-family: Titan One,sans-serif;color:#fff">
-            Whitet</div>
+          <div id="blookName" style="display: block; white-space: nowrap;font-family: Titan One,sans-serif;color:#fff">
+            name</div>
         </div>
-        <div id="trianrarity" class="styles__highlightedRarity___1EXx_-camelCase"
-          style="color: rgb(255, 255, 255);font-family: Titan One,sans-serif;">Common</div>
+        <div id="blookRarity" class="styles__highlightedRarity___1EXx_-camelCase"
+          style="color: rgb(255, 255, 255);font-family: Titan One,sans-serif;">Rarity</div>
       </div>
       <div class="styles__trianContainer___36LK2-camelCase styles__rightTrian___1JkY7-camelCase">
-        <img id="trianimg" src="logo.png" alt="Default" draggable="false" class="styles__trian___1R6So-camelCase">
+        <img id="blookImg" src="images/logo.png" alt="Default" draggable="false" class="styles__trian___1R6So-camelCase">
       </div>
-      <div id="trianquantity" class="styles__highlightedBottom___QmY2Y-camelCase">Default</div>
+      <div id="trianquantity" style="color: white;"class="styles__highlightedBottom___QmY2Y-camelCase">owned</div>
       <div class="styles__rightBottom___F7qsO-camelCase"></div>
     </div>
     <div class="styles__rightButtonRow___3a0GF-camelCase">
       <div id="selltrian" class="styles__button___1_E-G-camelCase styles__rightButton___2_ZIX-camelCase" role="button"
         tabindex="0">
         <div class="styles__shadow___3GMdH-camelCase"></div>
-        <div class="styles__edge___3eWfq-camelCase" id="edge1" style="background-color: #0c8015;"></div>
-        <div class="styles__front___vcvuy-camelCase" id="front1" style="background-color: #257D99;">
-          <div class="styles__rightButtonInside___14imT-camelCase"><img src="/media/misc/token.png" alt="Token"
+        <div class="styles__edge___3eWfq-camelCase" id="edge1" style="background-color: #b9b9b9;"></div>
+        <div class="styles__front___vcvuy-camelCase" id="front1" style="background-color: #dcdcdc;">
+          <div class="styles__rightButtonInside___14imT-camelCase"><img src="images/Token.png" alt="Token"
               class="styles__rightButtonImg___1WJdo-camelCase" draggable="false">Sell</div>
         </div>
       </div>
-      <!--         <div id="auctiontrian" class="styles__button___1_E-G-camelCase styles__rightButton___2_ZIX-camelCase" role="button" tabindex="0">
+      <div id="auctiontrian" class="styles__button___1_E-G-camelCase styles__rightButton___2_ZIX-camelCase" role="button" tabindex="0">
                 <div class="styles__shadow___3GMdH-camelCase"></div>
-                <div class="styles__edge___3eWfq-camelCase" id="edge2" style="background-color: #0c8015;"></div>
-                <div class="styles__front___vcvuy-camelCase" id="front2" style="background-color: #0c8015;">
+                <div class="styles__edge___3eWfq-camelCase" id="edge2" style="background-color: #b9b9b9;"></div>
+                <div class="styles__front___vcvuy-camelCase" id="front2" style="background-color: #dcdcdc;">
                     <div class="styles__rightButtonInside___14imT-camelCase"><i style="margin-right:7px" class="fas fa-building-columns"></i>Auction</div>
-                </div> -->
+                </div>
     </div>
 
   </div>
+  
   </div>
 </body>

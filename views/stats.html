@@ -4,17 +4,20 @@
 <head>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js
     " type="text/javascript"></script>
-  <script src="/js/all.js"></script>
-  <script src="/scripts/themes.js"></script>
   <script src="https://kit.fontawesome.com/50c608c656.js" crossorigin="anonymous"></script>
-  <script defer src="/js/stats.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="/css/main.css">
   <title>Stats | Whitet</title>
   <link rel="shortcut icon" href="/images/logo.png">
+  <script src="scripts/themes.js" defer></script>
+  <script src="scripts/preload.js"></script>
 </head>
 
-<body onload="ben()">
+<body>
+  <div class="preloader">
+    <img
+src="images/logo.png" alt="Preloader Image" class="preloader-image">
+</div>
 
   <div class="styles__background___2J-JA-camelCase">
     <div class="styles__blooksBackground___3oQ7Y-camelCase" style="background-image: url('/images/ui7.png');  animation: animatedBackground 9s linear infinite;
@@ -28,7 +31,7 @@
       <div class="styles__profileRow___cJa4E-camelCase">
         <div style="position: relative"
           class="styles__blookContainer___36LK2-camelCase styles__profileBlook___37mfP-camelCase">
-          <img src="logo.png" id='pfpimg' draggable="false" class="styles__blook___1R6So-camelCase">
+          <img src="images/logo.png" id='pfpimg' draggable="false" class="styles__blook___1R6So-camelCase">
         </div><text class="usertxt" id="usernamedrop">user</text>
       </div><i class="fas fa-angle-down styles__profileDropdownIcon___3iLIX-camelCase" aria-hidden="true"></i>
       <div class="styles__profileDropdownMenu___2jUAA-camelCase">
@@ -50,10 +53,9 @@
       </a><a class="styles__pageButton___1wFuu-camelCase" href="/blooks"><i
           class="styles__pageIcon___3OSy9-camelCase fas fa-suitcase" aria-hidden="true"></i>
         <div class="styles__pageText___1eo7q-camelCase">Blooks</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase"><i class="styles__pageIcon___3OSy9-camelCase fas fa-comment"
-          aria-hidden="true"></i>
+      </a><a class="styles__pageButton___1wFuu-camelCase"><i class="styles__pageIcon___3OSy9-camelCase fas fa-comment"aria-hidden="true"></i>
         <div class="styles__pageText___1eo7q-camelCase">Chat</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase" href="/chat"><i
+      </a><a class="styles__pageButton___1wFuu-camelCase" href="/auction"><i
           class="styles__pageIcon___3OSy9-camelCase fas fa-building-columns" aria-hidden="true"></i>
         <div class="styles__pageText___1eo7q-camelCase">Auction</div>
       </a></div>
@@ -79,15 +81,15 @@
             <div class="styles__headerBlookContainer___36zY5-camelCase">
               <div style="position: relative"
                 class="styles__blookContainer___36LK2-camelCase styles__headerBlook___DdSHd-camelCase">
-                <img src="blackknight.png" id="profiletrian" class="styles__blook___1RXSo-camelCase">
+                <img src="/images/logo.png" id="profiletrian" class="styles__blook___1RXSo-camelCase">
               </div>
             </div>
             <div class="styles__headerInfo___1oWlb-camelCase">
               <div class="styles__headerBanner___3Uuuk-camelCase">
-                <img src="slepp.png" class="styles__headerBg___12ogR-camelCase">
+                <img src="/images/banners/grey.png" class="styles__headerBg___12ogR-camelCase">
                 <div id="profileuser" style="color:#fff" class="styles__headerName___1GBcl-camelCase">
-                  Glixch</div>
-                <div id="role" style="color:#fff" class="styles__headerTitle___24Ox2-camelCase">Sicko Mode
+                  user</div>
+                <div id="role" style="color:#fff" class="styles__headerTitle___24Ox2-camelCase">title
                 </div>
                 <div class="styles__rightBottom___F7qsO-camelCase"></div>
               </div>
@@ -114,9 +116,9 @@
               </div>
               <div class="styles__front___vcvuy-camelCase" style="background-color: rgb(255, 163, 30);">
                 <div style="color:#fff;text-decoration: none" class="styles__headerButtonInside___26e_U-camelCase">
-                  <i class="styles__headerButtonIcon___1pOun-camelCase fas fa-store">
+                  <i class="styles__headerButtonIcon___1pOun-camelCase fas fa-handshake">
 
-                  </i>Unlock Blooks
+                  </i>Trade
                 </div>
               </div>
             </a>
@@ -127,8 +129,8 @@
               </div>
               <div class="styles__front___vcvuy-camelCase" style="background-color: rgb(30, 146, 255);">
                 <div style="color:#fff;text-decoration: none;" class="styles__headerButtonInside___26e_U-camelCase"><i
-                    class="styles__headerButtonIcon___1pOun-camelCase fas fa-suitcase" aria-hidden="true"></i>Manage
-                  Blooks</div>
+                    class="styles__headerButtonIcon___1pOun-camelCase fas fa-star" aria-hidden="true"></i>Claim
+                  Tokens</div>
               </div>
             </a>
           </div>
@@ -143,34 +145,35 @@
             <div class="styles__topStats___3qffP-camelCase">
               <div class="styles__statContainer___QKuOF-camelCase">
                 <div class="styles__statTitle___z4wSV-camelCase">Tokens</div>
-                <div id="tokens" class="styles__statNum___5RYSd-camelCase">0</div>
-                <img src="Token.png" alt="Tokens" class="styles__tokenImg___a08fY-camelCase" draggable="false">
+                <div id="tokens" class="styles__statNum___5RYSd-camelCase">Tokens</div>
+                <img src="images/Token.png" alt="Tokens" class="styles__tokenImg___a08fY-camelCase" draggable="false">
               </div>
               <div class="styles__statContainer___QKuOF-camelCase">
                 <div class="styles__statTitle___z4wSV-camelCase">Packs Opened</div>
-                <div id="opened" class="styles__statNum___5RYSd-camelCase">0</div>
+                <div id="opened" class="styles__statNum___5RYSd-camelCase">Packs</div>
                 <img draggable="false" class="styles__tokenImg___a08fY-camelCase" alt="Opened"
-                  src="Pack.png" style="width: 45px;">
+                  src="images/Pack.png" style="width: 45px;">
               </div>
               <div class="styles__statContainer___QKuOF-camelCase">
                 <div class="styles__statTitle___z4wSV-camelCase">Blooks Unlocked</div>
-                <div id="trians" class="styles__statNum___5RYSd-camelCase">0</div>
-                <img src="Unlock.png" alt="Unlocked" class="styles__tokenImg___a08fY-camelCase"
+                <div id="trians" class="styles__statNum___5RYSd-camelCase">Blooks</div>
+                <img src="images/Unlock.png" alt="Unlocked" class="styles__tokenImg___a08fY-camelCase"
                   draggable="false">
               </div>
               <div class="styles__statContainer___QKuOF-camelCase">
                 <div class="styles__statTitle___z4wSV-camelCase">Messages</div>
-                <div id="posts" class="styles__statNum___5RYSd-camelCase">0</div>
-                <img src="Triangle.webp" alt="Unlocked" class="styles__tokenImg___a08fY-camelCase"
+                <div id="posts" class="styles__statNum___5RYSd-camelCase">Messages</div>
+                <img src="images/blooks/Triangle.webp" alt="Unlocked" class="styles__tokenImg___a08fY-camelCase"
                   draggable="false">
               </div>
               <div class="styles__statContainer___QKuOF-camelCase">
                 <div class="styles__statTitle___z4wSV-camelCase">Auctions Placed</div>
-                <div id="likes" class="styles__statNum___5RYSd-camelCase">0</div>
-                <img src="BlooketWarrior.webp" alt="Unlocked" class="styles__tokenImg___a08fY-camelCase"
+                <div id="likes" class="styles__statNum___5RYSd-camelCase">Auctions</div>
+                <img src="images/blooks/og/BlooketWarrior.webp" alt="Unlocked" class="styles__tokenImg___a08fY-camelCase"
                   draggable="false">
 
               </div>
+      
             </div>
           </div>
         </div>
@@ -178,5 +181,5 @@
       </div>
     </div>
   </div>
-
+<script src="scripts/stats.js"></script>
 </body>

@@ -10,9 +10,15 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="shortcut icon" href="/images/logo.png">
   <title>Register | Whitet</title>
+  <script src="scripts/themes.js" defer></script>
+  <script src="scripts/preload.js"></script>
 </head>
 
 <body>
+  <div class="preloader">
+    <img
+src="images/logo.png" alt="Preloader Image" class="preloader-image">
+</div>
   <div class="navigation-line"><a class="styles__blooketText___1pMBG-camelCase" href="/">Whitet</a><a
       class="styles__headerRight___nPb83-camelCase" href="/login">Login</a></div>
   <form class="center-square">
@@ -34,8 +40,8 @@
       <input class="styles__input___2XTSp-camelCase" id="accesskey" placeholder="Access Key" type="password"
         autocomplete="accesskey" value="" fdprocessedid="6mp2xv">
     </div>
-    <input type="submit" id="resbtn" class="styles__button___2hNZo-camelCase styles__buttonFilled___23Dcn-camelCase"
-      tabindex="0" value="Register" fdprocessedid="v8l01l">
+    <div onclick="register()" id="resbtn" class="styles__button___2hNZo-camelCase styles__buttonFilled___23Dcn-camelCase"
+      tabindex="0" style="display: flex; justify-content: center; align-items: center;">Register</div>
     <a class="styles__forgotLink___KkpPa-camelCase" href="/getkey">No AccessKey?</a>
   </form>
   <div class="styles__background___2J-JA-camelCase">
@@ -46,6 +52,7 @@
         -o-animation: animatedBackground 9s linear infinite;">
     </div>
   </div>
+  <script src="/scripts/signup.js"></script>
 </body>
 
 </html>

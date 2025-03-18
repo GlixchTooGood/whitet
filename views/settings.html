@@ -2,19 +2,24 @@
 <html>
 
 <head>
-  <title>Setting | Whitet </title>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js
     " type="text/javascript"></script>
   <script src="/js/all.js"></script>
-  <script src="style.js"></script>
-  <script defer src="/js/settings.js"></script>
-  <link rel="stylesheet" href="/fontawesome6.3.0.css" crossorigin="anonymous">
+  <script src="/scripts/themes.js"></script>
+  <script src="https://kit.fontawesome.com/50c608c656.js" crossorigin="anonymous"></script>
+  <script defer src="/js/stats.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Settings | Whitet</title>
   <link rel="shortcut icon" href="/images/logo.png">
+  <script src="scripts/preload.js"></script>
 </head>
 
 <body>
+  <div class="preloader">
+    <img
+src="images/logo.png" alt="Preloader Image" class="preloader-image">
+</div>
   <div class="styles__background___2J-JA-camelCase">
     <div class="styles__blooksBackground___3oQ7Y-camelCase" style="background-image: url('/images/ui7.png');  animation: animatedBackground 9s linear infinite;
         -moz-animation: animatedBackground 9s linear infinite;
@@ -38,30 +43,34 @@
     </div>
   </div>
   <div class="styles__sidebar___1XqWi-camelCase">
-    <a href="/" id="big-Whitet" class="styles__blooketText___1pMBG-camelCase">Whitet</a>
+    <a href="/" class="styles__blooketText___1pMBG-camelCase">Whitet</a>
+    <a class="styles__pageButton___1wFuu-camelCase" href="/stats"><i
+      class="styles__pageIcon___3OSy9-camelCase fas fa-chart-column" aria-hidden="true"></i>
+    <div class="styles__pageText___1eo7q-camelCase">Stats</div>
+  </a>
     <div class="nothin"><a class="styles__pageButton___1wFuu-camelCase" href="/market"><i
           class="styles__pageIcon___3OSy9-camelCase fas fa-store" aria-hidden="true"></i>
         <div class="styles__pageText___1eo7q-camelCase">Market</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase" href="/trians"><i
+      </a><a class="styles__pageButton___1wFuu-camelCase" href="/blooks"><i
           class="styles__pageIcon___3OSy9-camelCase fas fa-suitcase" aria-hidden="true"></i>
-        <div class="styles__pageText___1eo7q-camelCase">Trians</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase" href="/posts"><i
-          class="styles__pageIcon___3OSy9-camelCase fas fa-file" aria-hidden="true"></i>
-        <div class="styles__pageText___1eo7q-camelCase">Posts</div>
-      </a><a class="styles__pageButton___1wFuu-camelCase"><i class="styles__pageIcon___3OSy9-camelCase fas fa-newspaper"
-          aria-hidden="true"></i>
-        <div class="styles__pageText___1eo7q-camelCase">News</div>
+        <div class="styles__pageText___1eo7q-camelCase">Blooks</div>
+      </a><a class="styles__pageButton___1wFuu-camelCase"><i class="styles__pageIcon___3OSy9-camelCase fas fa-comment"aria-hidden="true"></i>
+        <div class="styles__pageText___1eo7q-camelCase">Chat</div>
       </a><a class="styles__pageButton___1wFuu-camelCase" href="/auction"><i
           class="styles__pageIcon___3OSy9-camelCase fas fa-building-columns" aria-hidden="true"></i>
         <div class="styles__pageText___1eo7q-camelCase">Auction</div>
       </a></div>
+      
+      <a class="styles__plusButton___2dH73-camelCase" href="/store"></i>Toggle Dark Mode</a>
     <div class="styles__bottomRow___3OozA-camelCase">
       <a data-tip="Credits" class="styles__smallButton___sQuq8-camelCase" href="/credits" currentitem="false"><i
-          class="styles__bottomIcon___3Fswk-camelCase fas fa-address-book" aria-hidden="true"></i></a>
-      <a data-tip="Settings" class="styles__smallButton___sQuq8-camelCase" href="/settings" currentitem="false"><i
-          class="styles__bottomIcon___3Fswk-camelCase fas fa-cogs" aria-hidden="true"></i></a>
-      <a data-tip="Stats" class="styles__smallButton___sQuq8-camelCase" href="/stats" currentitem="false"><i
-          class="styles__bottomIcon___3Fswk-camelCase fas fa-user" aria-hidden="true"></i></a>
+          class="styles__bottomIcon___3Fswk-camelCase fas fa-users" aria-hidden="true"></i></a>
+      <a data-tip="Settings" class="styles__smallButton___sQuq8-camelCase" href="/settings" currentitem= " false"><i
+          class="styles__bottomIcon___3Fswk-camelCase fas fa-cog" aria-hidden="true"></i></a>
+      <a data-tip="Stats" class="styles__smallButton___sQuq8-camelCase" href="/news" currentitem="false"><i
+          class="styles__bottomIcon___3Fswk-camelCase fas fa-newspaper" aria-hidden="true"></i></a>
+          <a data-tip="Stats" class="styles__smallButton___sQuq8-camelCase" href="/news" currentitem="false"><i
+            class="styles__bottomIcon___3Fswk-camelCase fa-brands fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
   <div class="arts__profileBody___eNPbH-camelCase">
@@ -89,21 +98,27 @@
           <text style="cursor: pointer;text-decoration: underline;" class="styles__link___5UR6_-camelCase"
             id="chngpass">Change Password</text>
         </div>
+        <div>
+          <text style="cursor: pointer;text-decoration: underline;" class="styles__link___5UR6_-camelCase"
+            id="chngpass">Setup 2FA (Free Blook!)</text>
+        </div>
       </div>
       <div class="styles__infoContainer___2uI-S-camelCase">
         <div class="styles__headerRow___1tdPa-camelCase">
-          <i class="fas fa-pencil-alt styles__headerIcon___1ykdN-camelCase" aria-hidden="true"></i>
+          <i class="fas fa-star styles__headerIcon___1ykdN-camelCase" aria-hidden="true"></i>
           <div class="styles__infoHeader___1lsZY-camelCase">Additions</div>
         </div>
-        <div style="font-size:20px;color:#fff">
+        <div class="styles__text___1x37n-camelCase">
           Change Theme: <br>
           <select id="themeSelect"
             style="background-color: #616161;color: #fff;border: none;outline: none;padding: 5px 10px;border-radius: 5px;font-size: 15px; cursor: pointer; margin-top: 5px; margin-bottom: 5px; margin-left: 5px;"
             class="styles__link___5UR6_-camelCase">
             <option value="">Default</option>
+            <option value="dark">Dark</option>
             <option value="spooky">Spooky</option>
-            <option value="winter">Winter</option>
-            <option value="white__gold">WG</option>
+            <option value="wg">WG</option>
+          
+            
           </select>
         </div>
       </div>
@@ -115,9 +130,31 @@
         <div class="styles__text___1x37n-camelCase">Contact us at: <a class="styles__link___5UR6_-camelCase"
             href="https://discord.gg/8zwAqtD38N">Discord</a>
         </div>
+        <div class="styles__text___1x37n-camelCase">Please read our TOS: <a class="styles__link___5UR6_-camelCase"
+          href="https://discord.gg/8zwAqtD38N">TOS</a>
+      </div>
+      </div>
+      <div class="styles__infoContainer___2uI-S-camelCase">
+        <div class="styles__headerRow___1tdPa-camelCase">
+          <i class="fas fa-clipboard styles__headerIcon___1ykdN-camelCase" aria-hidden="true"></i>
+          <div class="styles__infoHeader___1lsZY-camelCase">Plan</div>
+        </div>
+        <div id="username" class="styles__text___1x37n-camelCase"><b>Plan:</b> Plan</div>
+        
+      </div>
+      <div class="styles__infoContainer___2uI-S-camelCase">
+        <div class="styles__headerRow___1tdPa-camelCase">
+          <i class="fas fa-code styles__headerIcon___1ykdN-camelCase" aria-hidden="true"></i>
+          <div class="styles__infoHeader___1lsZY-camelCase">Somthin</div>
+        </div>
+        <div class="styles__text___1x37n-camelCase">Somthin: <a class="styles__link___5UR6_-camelCase"
+            href="https://discord.gg/8zwAqtD38N">Somethin</a>
+        </div>
       </div>
     </div>
   </div>
 </body>
+<script src="scripts/themes.js" defer></script>
+
 
 </html>

@@ -3,20 +3,23 @@
 
 <head>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js
-  " type="text/javascript"></script>
+    " type="text/javascript"></script>
   <script src="/js/all.js"></script>
   <script src="/scripts/themes.js"></script>
-  <script defer src="/js/market.js"></script>
-  <link rel="stylesheet" href="/fontawesome6.3.0.css" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
+  <script src="https://kit.fontawesome.com/50c608c656.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="/css/main.css">
   <title>Market | Whitet</title>
   <link rel="shortcut icon" href="/images/logo.png">
+  <script src="scripts/preload.js"></script>
+  <script src="scripts/market.js"></script>
 </head>
 
 <body>
+  <div class="preloader">
+    <img
+src="images/logo.png" alt="Preloader Image" class="preloader-image">
+</div>
   <div class="styles__background___2J-JA-camelCase">
     <div class="styles__blooksBackground___3oQ7Y-camelCase" style="background-image: url('/images/ui7.png');  animation: animatedBackground 9s linear infinite;
     -moz-animation: animatedBackground 9s linear infinite;
@@ -24,17 +27,34 @@
     -ms-animation: animatedBackground 9s linear infinite;
     -o-animation: animatedBackground 9s linear infinite;"></div>
   </div>
+  <div id="packOpen" class="packBG" style="background: radial-gradient(circle, #fff 0%, #4287f5 100%); overflow: hidden;">
+    <div class="styles__openContainer___3paFG-camelCase styles__openingContainer___2OmG9-camelCase">
+      <img loading="lazy" src="images/paper.webp" class="styles__blookBackground___3rt4N-camelCase" draggable="false">
+          <div class="styles__blookContainer___36LK2-camelCase styles__unlockedBlookImage___wC4gr-camelCase">
+              <img loading="lazy" src="images/logo.png" draggable="false" class="styles__blook___1R6So-camelCase">
+          </div>
+          <div class="styles__unlockedText___1diat-camelCase">
+              <div class="styles__unlockedBlook___2pr1Z-camelCase" style="font-size: 2.031vw;">
+                <div style="font-size: 40px; color:white; display: block; white-space: nowrap;font-family: Titan One;">Whitet</div>
+              </div>
+              <div class="styles__rarityText___1PfSA-camelCase" style="color: #4bc22e;">Uncommon</div>
+          </div>
+          <div class="styles__bottomText___3_k10-camelCase">15%</div>
+          <div class="styles__bottomShadow___10ZLG-camelCase"></div>
+      </div>
+  </div>
+  
   <div class="styles__topRightRow___dQvxc-camelCase">
-    <div class="styles__tokenBalance___1FHgT-camelCase"><img src="shellll.png" alt="Token"
+    <div class="styles__tokenBalance___1FHgT-camelCase"><img src="images/Token.png" alt="Token"
         class="styles__tokenBalanceIcon___3MGhs-camelCase" draggable="false">
-      <div id="tokenbalance" style="color: #fff;">0</div>
+      <div id="tokenbalance" style="color: #000;">0</div>
     </div>
     <div class="styles__profileContainer___CSuIE-camelCase" role="button" tabindex="0">
       <div class="styles__profileRow___cJa4E-camelCase">
         <div style="position: relative"
           class="styles__blookContainer___36LK2-camelCase styles__profileBlook___37mfP-camelCase">
-          <img src="logo.png" id="pfpimg" draggable="false" class="styles__blook___1RXSo-camelCase">
-        </div><text class="" style="color: #ffffff" id="usernamedrop">user</text>
+          <img src="images/logo.png" id="pfpimg" draggable="false" class="styles__blook___1RXSo-camelCase">
+        </div><text class="" style="color: #000" id="usernamedrop">user</text>
       </div><i class="fas fa-angle-down styles__profileDropdownIcon___3iLIX-camelCase" aria-hidden="true"></i>
       <div class="styles__profileDropdownMenu___2jUAA-camelCase">
         <a class="styles__profileDropdownOption___ljZXD-camelCase" href="/logout"><i
@@ -80,15 +100,54 @@
     <div class="styles__leftColumn___2MTgv-camelCase">
       <div id="packswrapper" class="styles__packsWrapper___2hBF4-camelCase">
 
+      <div id="sodaPack" class="styles__packContainer___3RwSU-camelCase" role="button" style="background: radial-gradient(circle, #ffff 0%, #4287f5 100%);">
+        <img class="styles__packImg___3to1S-camelCase" src="images/packcover/sodapack.png"></img>
+        <img class="styles__packShadow___2TA17-camelCase" src="images/packcover/dorizopack.png"></img>
+      <div class="styles__packBottom___37drt-camelCase" style="color: white;">
+        <img class="styles__packPriceImg___1FaDF-camelCase" src="images/Token.png"></img>0
+      </div>
+
+      </div>
+      <div class="styles__packContainer___3RwSU-camelCase" role="button" style="background: radial-gradient(circle, #ff8a36 0%, #ea4c21 100%);">
+        <img class="styles__packImg___3to1S-camelCase" src="images/packcover/dorizopacks.png"></img>
+        <img class="styles__packShadow___2TA17-camelCase" src="images/packcover/dorizopacks.png"></img>
+        <div class="styles__packBottom___37drt-camelCase" style="color: white;">
+          <img class="styles__packPriceImg___1FaDF-camelCase" src="images/Token.png"></img>0
+        </div>
+      </div>
+
+    <div class="styles__packContainer___3RwSU-camelCase" role="button" style="background: radial-gradient(circle, #5e36ff 0%, #22085f 100%);">
+      <img class="styles__packImg___3to1S-camelCase" src="images/packcover/forkknifepack.webp"></img>
+      <img class="styles__packShadow___2TA17-camelCase" src="images/packcover/sodapack.png"></img>
+      <div class="styles__packBottom___37drt-camelCase" style="color: white;">
+        <img class="styles__packPriceImg___1FaDF-camelCase" src="images/Token.png"></img>0
+        
+    </div>
+</div>
+
       </div>
     </div>
     <div class="styles__storeContainer___FgOVv-camelCase">
-      <img id="phill" src="phillyboi.png" alt="Phill the Cashier" class="styles__cashierBlook___iI1UH-camelCase"
+      <img id="phill" src="images/blooks/og/brp.webp" alt="Phill the Cashier" class="styles__cashierBlook___iI1UH-camelCase"
         draggable="false">
-      <img id="market" src="market.png" alt="Store" class="styles__storeImg___2c3cG-camelCase" draggable="false">
+      <img id="market" src="images/market.webp" alt="Store" class="styles__storeImg___2c3cG-camelCase" draggable="false">
       <div class="styles__instantButton___2ezEk-camelCase" id="instantOpen" role="button">Instant Open: Off</div>
     </div>
   </div>
 </body>
+<script>const getImageSrc = () => {
+  const randomNumber = Math.floor(Math.random() * 100);
+  if (randomNumber === 0) {
+    return 'images/blooks/Triangle.webp';
+  } else if (randomNumber < 10) {
+    return 'images/blooks/og/brp.webp';
+  } else {
+    return 'images/coolmark.webp';
+  }
+};
 
+document.getElementById('phill').src = getImageSrc();
+
+</script>
+<script src="scripts/themes.js" defer></script>
 </html>
