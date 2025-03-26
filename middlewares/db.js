@@ -1,11 +1,8 @@
 const path = require("path");
 const mongoose = require('mongoose');
-require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+//require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
-await mongoose.connect('mongodb+srv://whitelet:dev@cluster0.uccns.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect('mongodb+srv://whitelet:dev@cluster0.uccns.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0').then(e=>console.log("connected!"))
 
 const userSchema = new mongoose.Schema({
   username: String
@@ -19,32 +16,25 @@ const userSchema = new mongoose.Schema({
   }]
   , auctions: [],
   pfp: String,
-  banner: String
+  banner: String,
+  discordId: String
 });
 const keySchema = new mongoose.Schema({
-  token: String
+  token: String,
+  discordId: String
 });
-async function getUsers() {
+function getUsers() {
   return mongoose.model("User", userSchema);
 }
-async function getKeys() {
+function getKeys() {
   return mongoose.model("Key", keySchema);
 }
-async function getDatabase() {
+function getDatabase() {
   return mongoose;
 }
 
 async function disconnect(connection) {
-  if (connection) {
-    try {
-      await connection.end();
-    } catch (err) {
-      console.error('Error disconnecting from the database:', err);
-      throw err;
-    }
-  } else {
-    console.error('No connection to disconnect');
-  }
+
 }
 
 module.exports = {

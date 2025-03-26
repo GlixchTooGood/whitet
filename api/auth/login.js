@@ -4,13 +4,13 @@ const Users = db.getUsers();
 
 const main = async (req) => {
   const session = req.session;
-  const connection = await db.connect();
-  const username = req.body.username.trim().toLowerCase();
+  const username = req.body.username.trim();
   const password = req.body.password;
-  const user = Users.findOne({ username });
+  const user = await Users.findOne({ username });
   if (!user) {
     return { 'success': false, 'error': "Account doesn't exist." };
   } else {
+    console.log(user);
     const isValidPass = await bcrypt.compare(password, user.password);
     
     if (isValidPass) {

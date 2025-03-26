@@ -56,4 +56,4 @@ router.get("/terms",(req,res)=>{
 router.get("/staff",(req,res)=>{
     res.sendFile(path.join(__dirname, '..', 'views', 'staff.html'));
 })
-module.exports = router
+module.exports = router;

@@ -19,9 +19,6 @@ const main = async(req)=>{
         return {'success': false,'error': "Account under session doesnt exist"}
     }
  }else{
-    if(connection){
-     await db.disconnect(connection)
-    }
     return {'success': false,'error': "You're not logged in"}
  }
 }

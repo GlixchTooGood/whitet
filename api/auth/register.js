@@ -5,11 +5,11 @@ const Users = db.getUsers();
 const Keys = db.getKeys();
 const main = async (req) => {
   const session = req.session;
-  console.log(req.body)
-  const username = req.body.username;
+  console.log(req.body);
+  const username = req.body.username.trim();
   const password = req.body.password;
   const accesskey = req.body.accesskey;
-  const hashedPassword = await bcrypt.hash(password, 20);
+
 
   const formattedUser = /^[a-zA-Z0-9_]+$/.test(username);
   const characterLimit = 16;
@@ -25,14 +25,19 @@ const main = async (req) => {
     return { 'success': false, 'msg': "Username can't contain invalid characters" };
   }
 
-  const user = await Users.findOne({ username });
+  const user = await Users.findOne({ username: username.toLowerCase() });
   if (user) {
     return { 'success': false, 'error': "Account exists." }
   } else {
     const key = await Keys.findOne({ token: accesskey });
     if (!key) {
-      return { 'success': false, 'error': "Access key invalid!" }
+      return { 'success': false, 'error': "Access key not found!" }
     } else {
+        const discordUser = await Users.findOne({discordId: key.discordId});
+        if(discordUser){
+          return {'success':false,'error':'User already signed up with this discord account!'}
+        }
+        const hashedPassword = await bcrypt.hash(password, 10);
         session.username = username;
         session.shells = 0
         session.role = "Common"
@@ -48,10 +53,11 @@ const main = async (req) => {
           role: "Common",
           messages: [],
           pfp: "/images/logo.png",
-          banner: "/images/banners/grey.png"
+          banner: "/images/banners/grey.png",
+          discordId: key.discordId
         });
         session.uid = createdUser._id;
-        await key.remove();
+        await key.deleteOne();
         return { success: true }
     }
   }
