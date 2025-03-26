@@ -1,20 +1,37 @@
-const mysql = require('mysql2/promise');
-const path = require("path")
+const path = require("path");
+const mongoose = require('mongoose');
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
-async function connect() {
-  try {
-    const connection = await mysql.createConnection({
-      host: process.env.dbHost,
-      user: process.env.dbUser,
-      password: process.env.dbPass,
-      database: process.env.dbDb,
-      charset: process.env.dbCharSet,
-    });
-    return connection;
-  } catch (err) {
-    console.error('Error connecting to the database:', err);
-    throw err;
-  }
+
+await mongoose.connect('mongodb+srv://whitelet:dev@cluster0.uccns.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const userSchema = new mongoose.Schema({
+  username: String
+  , password: String//bcryptd string
+  , shells: Number
+  , role: String
+  , accesskey: { type: mongoose.Schema.Types.ObjectId, ref: 'Key' }
+  , messages: [{
+    timeSent: Date,
+    content: String
+  }]
+  , auctions: [],
+  pfp: String,
+  banner: String
+});
+const keySchema = new mongoose.Schema({
+  token: String
+});
+async function getUsers() {
+  return mongoose.model("User", userSchema);
+}
+async function getKeys() {
+  return mongoose.model("Key", keySchema);
+}
+async function getDatabase() {
+  return mongoose;
 }
 
 async function disconnect(connection) {
@@ -31,6 +48,8 @@ async function disconnect(connection) {
 }
 
 module.exports = {
-  connect,
+  getDatabase,
+  getUsers,
   disconnect,
+  getKeys
 };

@@ -1,11 +1,10 @@
 const db = require("../../middlewares/db");
-
+const Users = db.getUsers();
 const main = async(req)=>{
- const connection = await db.connect()
  if(req.session.loggedIn){
-    const [user] = await connection.query("SELECT * FROM users WHERE username=?",[req.session.username])
-    if(user.length !== 0){
-     const userData = {"username": user[0].username,"uid": user[0].uid,"shells": user[0].shells,"role": user[0].role,"messages": user[0].messages,"auctions": user[0].auctions,"pfp": user[0].pfp,"banner": user[0].banner}
+    const user = await Users.findOne({ username: req.session.username });
+    if(user){
+     const userData = {"username": user.username,"uid": user.uid,"shells": user.shells,"role": user.role,"messages": user.messages,"auctions": user.auctions,"pfp": user.pfp,"banner": user.banner}
      const session = req.session;
      session.username = userData.username;
      session.uid = userData.uid;
@@ -17,9 +16,6 @@ const main = async(req)=>{
      session.banner = userData.banner;
      return {'success': true,'user': userData}
     }else{
-        if(connection){
-          await db.disconnect(connection)
-        }
         return {'success': false,'error': "Account under session doesnt exist"}
     }
  }else{

@@ -1,39 +1,30 @@
 const db = require("../../middlewares/db");
 const bcrypt = require("bcrypt");
+const Users = db.getUsers();
 
 const main = async (req) => {
   const session = req.session;
   const connection = await db.connect();
   const username = req.body.username.trim().toLowerCase();
   const password = req.body.password;
-  const [data] = await connection.query("SELECT * FROM users WHERE username=?", [username]);
-  
-  if (data.length === 0) {
-    if (connection) {
-      await db.disconnect(connection);
-    }
+  const user = Users.findOne({ username });
+  if (!user) {
     return { 'success': false, 'error': "Account doesn't exist." };
   } else {
-    const isValidPass = await bcrypt.compare(password, data[0].password);
+    const isValidPass = await bcrypt.compare(password, user.password);
     
     if (isValidPass) {
-      session.username = data[0].username;
-      session.uid = data[0].uid;
-      session.shells = data[0].shells;
-      session.role = data[0].role;
+      session.username = user.username;
+      session.uid = user._id;
+      session.shells = user.shells;
+      session.role = user.role;
       session.loggedIn = true;
-      session.messages = data[0].messages;
-      session.auctions = data[0].auctions;
-      session.pfp = data[0].pfp;
-      session.banner = data[0].banner;
-      if (connection) {
-        await db.disconnect(connection);
-      }
+      session.messages = user.messages;
+      session.auctions = user.auctions;
+      session.pfp = user.pfp;
+      session.banner = user.banner;
       return { success: true };
     } else {
-      if (connection) {
-        await db.disconnect(connection);
-      }
       return { success: false, 'error': "Invalid username or password." };
     }
   }
