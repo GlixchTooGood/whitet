@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('static'));
 
-app.use(sessionMiddleware);
+app.use(sessionMiddleware);//test of commit by cool duck
 
 app.use(apiRouter);
 app.use(htmlRouter);
