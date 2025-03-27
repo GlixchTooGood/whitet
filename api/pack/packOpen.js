@@ -33,6 +33,7 @@ const main = async (req) => {
         });
     }
     user.shells-=pack.cost;
+    user.packsOpened+=1;
     await user.save();
     return { success: true, blookEarned: earnedBlook, shellsRemaining: user.shells };
 }
