@@ -6,7 +6,7 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 const crypto = require('crypto');
 
 const Keys = db.getKeys();
-
+const Users = db.getUsers();
 // Function to generate a random base64 string
 function generateRandomBase64String(length) {
     const randomBytes = crypto.randomBytes(length);
@@ -21,6 +21,14 @@ module.exports = {
         const randomB64 = generateRandomBase64String(36);
         const user = interaction.user;
         console.log(`Command sent by: ${user.username} (ID: ${user.id})`);
+        const discordUser = await Users.findOne({discordId: user.id});
+        if(discordUser){
+            await interaction.reply({
+                content: `You have already created account \`${discordUser.username}\`!`,
+                flags: MessageFlags.Ephemeral
+            });
+            return;
+        }
         const key = await Keys.findOne({discordId:user.id});
         if (!key) {
             await Keys.create({

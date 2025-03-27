@@ -33,10 +33,6 @@ const main = async (req) => {
     if (!key) {
       return { 'success': false, 'error': "Access key not found!" }
     } else {
-        const discordUser = await Users.findOne({discordId: key.discordId});
-        if(discordUser){
-          return {'success':false,'error':'User already signed up with this discord account!'}
-        }
         const hashedPassword = await bcrypt.hash(password, 10);
         session.username = username;
         session.shells = 0
