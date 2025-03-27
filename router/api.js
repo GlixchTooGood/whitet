@@ -10,8 +10,10 @@ try{
 })
 
 router.post("/api/v2/register",async(req,res)=>{
+  try{
     let api_call = await api.register.main(req)
     res.send(api_call)
+  } catch(e){res.send({success:false,error:"Error: "+e});}
 })
 
 router.get("/api/v2/user",async(req,res)=>{
@@ -27,5 +29,11 @@ router.get("/logout",async(req,res)=>{
     res.redirect("/")
  }
 })
+router.post("/api/v2/packOpen",async(req,res)=>{
+  try{
+    let api_call = await api.packOpen.main(req)
+    res.send(api_call)
+  } catch(e){res.send({success:false,error:"Error: "+e});}
+});
 
 module.exports = router

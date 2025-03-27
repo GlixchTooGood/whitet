@@ -1,11 +1,8 @@
-const register = require("./auth/register")
-const login = require("./auth/login")
-const getUser = require("./stats/user")
-
-const apis={
-    register,
-    login,
-    getUser,
+const apis = {
+    register:require("./auth/register"),
+    login:(require("./auth/login")),
+    getUser:require("./stats/user"),
+    packOpen:(require("./pack/packOpen"))
 }
 
 module.exports = apis;
