@@ -35,6 +35,7 @@ const keySchema = new mongoose.Schema({
 });
 const packSchema = new mongoose.Schema({
   name: String,
+  cost: Number,
   blooks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Blook' }]
 });
 function getUsers() {
