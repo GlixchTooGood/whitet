@@ -5,7 +5,7 @@ const Users = db.getUsers();
 const Keys = db.getKeys();
 const main = async (req) => {
   const session = req.session;
-  console.log(req.body);
+  //console.log(req.body);
   const username = req.body.username.trim();
   const password = req.body.password;
   const accesskey = req.body.accesskey;
@@ -40,6 +40,8 @@ const main = async (req) => {
         session.loggedIn = true
         session.messages = 0;
         session.auctions = 0;
+        session.packsOpened = 0;
+        session.ownedBlooks = [];
         session.pfp = "/images/logo.png";
         session.banner = "/images/banners/grey.png";
         const createdUser = await Users.create({
@@ -50,7 +52,9 @@ const main = async (req) => {
           messages: [],
           pfp: "/images/logo.png",
           banner: "/images/banners/grey.png",
-          discordId: key.discordId
+          discordId: key.discordId,
+          ownedBlooks: [],
+          packsOpened: 0
         });
         session.uid = createdUser._id;
         await key.deleteOne();

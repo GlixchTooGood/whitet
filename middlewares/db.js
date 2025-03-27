@@ -9,12 +9,17 @@ const userSchema = new mongoose.Schema({
   , password: String//bcryptd string
   , shells: Number
   , role: String
-  , accesskey: { type: mongoose.Schema.Types.ObjectId, ref: 'Key' }
   , messages: [{
     timeSent: Date,
     content: String
   }]
-  , auctions: [],
+  ,auctions: [],
+  ownedBlooks: [{
+    name: String,
+    imageURL: String,
+    count: Number
+  }],
+  packsOpened: Number,
   pfp: String,
   banner: String,
   discordId: String
@@ -22,6 +27,9 @@ const userSchema = new mongoose.Schema({
 const keySchema = new mongoose.Schema({
   token: String,
   discordId: String
+});
+const packSchema = new mongoose.Schema({
+
 });
 function getUsers() {
   return mongoose.model("User", userSchema);

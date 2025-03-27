@@ -10,7 +10,6 @@ const main = async (req) => {
   if (!user) {
     return { 'success': false, 'error': "Account doesn't exist." };
   } else {
-    console.log(user);
     const isValidPass = await bcrypt.compare(password, user.password);
     
     if (isValidPass) {
@@ -23,6 +22,8 @@ const main = async (req) => {
       session.auctions = user.auctions;
       session.pfp = user.pfp;
       session.banner = user.banner;
+      session.packsOpened = user.packsOpened;
+      session.ownedBlooks = user.ownedBlooks;
       return { success: true };
     } else {
       return { success: false, 'error': "Invalid username or password." };
